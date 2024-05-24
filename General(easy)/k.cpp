@@ -27,21 +27,7 @@ bool isprime(ll n)
     }
     return true;
 }
-// ll fib(int n){
-//     if(n == 1){
-//         return 0;
-//     }
-//     if (n == 2)
-//     {
-//         return 1;
-//     }
-//     ll a[n] = {0};
-//     a[1] = 1;
-//     for(int i = 2; i <= n; i++){
-//         a[i] = a[i - 1] + a[i - 2];
-//     }
-//     return a[n - 1];
-// }
+
 
 int main(){
     ios_base::sync_with_stdio(false); 

@@ -17,17 +17,19 @@ int main()
         cin >> b[i];
     }
     int i = 0, j = 0;
-    bool f = false;
-    while (true)
+    while (i < n && j < m)
     {
-        if(b[i] == a[j]){
-            i++;
+        if (a[i] == b[j])
+        {
             j++;
         }
-        else{
-            j++;
-        }
-        if(j == m){}
+        i++;
     }
-    f ? cout << "YES" : cout << "NO";
+    if (j == m && b[j - 1] == a[i - 1])
+    {
+        cout << "YES";
+    }
+    else{
+        cout << "NO";
+    }
 }

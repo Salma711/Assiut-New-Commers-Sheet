@@ -1,35 +1,40 @@
 #include <iostream>
-using namespace std; 
+#include <algorithm>
+using namespace std;
 
-void swaprow(int n, int x, int y, int arr[][500]){
-    int temp;
-    for(int i=0; i<n; i++){
-        for(int j=0; j<n;j++){
-            temp = arr[i][x];
-            arr[i][x] = arr[i][y];
-            arr[i][y] = temp;
-        }
+void swaprow(int n, int x, int y, int *arr)
+{
+    for (int i = 0; i < n; i++){
+        swap(*(arr + n * x + i), *(arr + n * y + i));
     }
 }
 
-void print(int n, int x, int y, int arr[][500]){
-    for(int i=0; i<n; i++){
-        for(int j=0; j<n; j++){
-            cout<<arr[j][i];
+void print(int n, int *arr)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << *(arr + i * n + j) << " ";
         }
+        cout << "\n";
     }
 }
 
-int main(){
+int main()
+{
     int n, x, y;
-    cin>>n>>x>>y;
+    cin >> n >> x >> y;
     int arr[n][n];
-    for(int i=0; i<n; i++){
-        for(int j=0; j<n; j++){
-            cin>>arr[j][i];
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cin >> arr[i][j];
         }
     }
-    swaprow(n, x, y, arr);
+    swaprow(n, x - 1, y - 1, (int*)arr);
+    print(n, (int*)arr);
 }
 // x = 1 y = 2
 //  5 * 3
