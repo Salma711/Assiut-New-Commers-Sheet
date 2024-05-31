@@ -9,6 +9,14 @@ void swaprow(int n, int x, int y, int *arr)
     }
 }
 
+void swapcol(int n, int x, int y, int *arr)
+{
+    for (int i = 0; i < n; i++)
+    {
+        swap(*(arr + n * i + x), *(arr + n * i + y));
+    }
+}
+
 void print(int n, int *arr)
 {
     for (int i = 0; i < n; i++)
@@ -33,12 +41,7 @@ int main()
             cin >> arr[i][j];
         }
     }
-    swaprow(n, x - 1, y - 1, (int*)arr);
+    swaprow(n, x - 1, y - 1, (int *)arr);
+    swapcol(n, x - 1, y - 1, (int*)arr);
     print(n, (int*)arr);
 }
-// x = 1 y = 2
-//  5 * 3
-//  0 1 2 3 4
-//  2 2 2 2 2 0
-//  (2 2 2 2 2) 1
-//  (2 2 2 2 2) 2

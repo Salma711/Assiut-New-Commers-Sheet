@@ -3,7 +3,7 @@
 using namespace std;
 
 bool isvow(char c) {
-    return (c == 'a' || c == 'i' || c == 'o' || c == 'u' || c == 'e');
+    return (c == 'a' || c == 'i' || c == 'o' || c == 'u' || c == 'e' || c == 'A' || c == 'I' || c == 'O' || c == 'U' || c == 'E');
 }
 
 void vow(string str, int n, int &v){
